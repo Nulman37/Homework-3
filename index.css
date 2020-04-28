@@ -1,5 +1,5 @@
 .form-style-1{
-	font-family: 'Open Sans Condensed', arial, sans;
+	font-family: arial, sans;
 	width: 500px;
 	padding: 30px;
 	background: #FFFFFF;
@@ -10,7 +10,7 @@
 .form-style-1 h1{
 	background: #4D4D4D;
 	text-transform: uppercase;
-	font-family: 'Open Sans Condensed', sans-serif;
+	font-family: sans-serif;
 	color: #c5c5c5;
 	font-size: 18px;
 	font-weight: 100;
@@ -18,7 +18,8 @@
 	margin: -30px -30px 30px -30px;
 }
 .form-style-1 input[type="text"],
-.form-style-1 input[type="number"]{
+.form-style-1 input[type="number"]
+{
 	box-sizing: border-box;
 	outline: none;
 	display: block;
@@ -31,19 +32,21 @@
 	font: 16px Arial, Helvetica, sans-serif;
 	height: 45px;
 }
-.form-style-1 textarea{
-    	box-sizing: border-box;
-	outline: none;
+div{
 	display: block;
-	width: 100%;
 	padding: 7px;
 	border: none;
 	border-bottom: 1px solid #ddd;
-    	background: transparent;
-    	margin-top: 10px;
+	margin-top: 10px;
 	margin-bottom: 10px;
 	font: 16px Arial, Helvetica, sans-serif;
-    	overflow: auto;
+}
+div table{
+	text-align: left;
+	width: 100%;
+}
+div table td{
+	width: 33%;
 }
 .form-style-1 input[type="button"]{
 	box-shadow: inset 0px 1px 0px 0px #45D6D6;
