@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             foodArray.push(temp);
             displayCalories();
             document.getElementById("form-1").reset();
+            document.getElementById("foodName").focus();
         }
     });
     
@@ -23,14 +24,23 @@ document.addEventListener("DOMContentLoaded", function (event) {
         let displayString = "";
         let calorieTotal = 0;
 
+        displayString += '<table>';
+        displayString += '<tr><th>Quantity</th>' +
+                         '<th>Food</th>' +
+                         '<th>Total Calories</th></tr>';
         for (let i in foodArray){
-            displayString += foodArray[i].toString() + "\n";
+            displayString += '<tr>';
+            displayString += '<td>' + foodArray[i].quantity + '</td>' +
+                             '<td>' + foodArray[i].name + '</td>' +
+                             '<td>' + foodArray[i].totalCalories() + ' calories' + '</td>';
+            displayString += '</tr>';
             calorieTotal += foodArray[i].totalCalories();
         }
+        displayString += '</table>';
+        
+        displayString += "<p>\n====================================================</p>";
+        displayString += "<p>\nCurrent total calories: " + calorieTotal + "</p>";
 
-        displayString += "\n=========================";
-        displayString += "\nCurrent total calories: " + calorieTotal;
-
-        document.getElementById("outputArea").value = displayString;
+        document.getElementById("outputArea").innerHTML = displayString;
     }
 });
