@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         }
         displayString += '</table>';
         
-        displayString += "<p>\n====================================================</p>";
+        displayString += "<p>\n==================================================</p>";
         displayString += "<p>\nCurrent total calories: " + calorieTotal + "</p>";
 
         document.getElementById("outputArea").innerHTML = displayString;
