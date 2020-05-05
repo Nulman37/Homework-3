@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         let nameValue = document.getElementById("foodName").value;
         let calorieValue = document.getElementById("calorieCount").value;
         let quantityValue = document.getElementById("quantity").value;
+        let divOutputArea = document.getElementById("outputArea");
         
         let temp = new FoodItem(nameValue, calorieValue, quantityValue);
 
@@ -15,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         else {
             foodArray.push(temp);
             displayCalories();
+            divOutputArea.scrollTop = divOutputArea.scrollHeight;
             document.getElementById("form-1").reset();
             document.getElementById("foodName").focus();
         }
@@ -24,22 +26,20 @@ document.addEventListener("DOMContentLoaded", function (event) {
         let displayString = "";
         let calorieTotal = 0;
 
-        displayString += '<table>';
-        displayString += '<tr><th>Quantity</th>' +
+        displayString += '<table>' +
+                         '<tr><th>Quantity</th>' +
                          '<th>Food</th>' +
                          '<th>Total Calories</th></tr>';
         for (let i in foodArray){
-            displayString += '<tr>';
-            displayString += '<td>' + foodArray[i].quantity + '</td>' +
+            displayString += '<tr>' +
+                             '<td>' + foodArray[i].quantity + '</td>' +
                              '<td>' + foodArray[i].name + '</td>' +
-                             '<td>' + foodArray[i].totalCalories() + ' calories' + '</td>';
-            displayString += '</tr>';
+                             '<td>' + foodArray[i].totalCalories() + ' calories</td></tr>';
             calorieTotal += foodArray[i].totalCalories();
         }
-        displayString += '</table>';
-        
-        displayString += "<p>\n==================================================</p>";
-        displayString += "<p>\nCurrent total calories: " + calorieTotal + "</p>";
+        displayString += '</table>' +     
+                         "<p>\n==================================================</p>" +
+                         "<p>\nCurrent total calories: " + calorieTotal + "</p>";
 
         document.getElementById("outputArea").innerHTML = displayString;
     }
